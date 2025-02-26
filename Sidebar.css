@@ -1,0 +1,203 @@
+.jpm-sidebar {
+  width: 240px;
+  height: 100vh;
+  background-color: var(--jpm-secondary);
+  color: var(--jpm-neutral-100);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--jpm-z-fixed);
+  transition: width 0.3s ease;
+  overflow-x: hidden;
+  box-shadow: var(--jpm-shadow-lg);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.jpm-sidebar-collapsed {
+  width: 64px;
+}
+
+.jpm-sidebar-toggle {
+  position: absolute;
+  top: 15px;
+  right: 10px;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--jpm-neutral-300);
+  transition: var(--jpm-transition-normal);
+  border-radius: var(--jpm-radius-md);
+  z-index: 1;
+}
+
+.jpm-sidebar-toggle:hover {
+  color: var(--jpm-neutral-100);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.jpm-sidebar-header {
+  padding: var(--jpm-space-4);
+  height: 64px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.jpm-sidebar-logo {
+  display: flex;
+  align-items: center;
+  color: var(--jpm-neutral-100);
+  font-weight: var(--jpm-font-weight-bold);
+  font-size: var(--jpm-font-size-lg);
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.jpm-sidebar-logo img {
+  height: 32px;
+  width: 32px;
+  margin-right: var(--jpm-space-2);
+}
+
+.jpm-sidebar-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--jpm-space-2) 0;
+}
+
+.jpm-sidebar-nav {
+  width: 100%;
+}
+
+.jpm-sidebar-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.jpm-sidebar-nav-link {
+  display: flex;
+  align-items: center;
+  padding: var(--jpm-space-3) var(--jpm-space-4);
+  color: var(--jpm-neutral-300);
+  transition: var(--jpm-transition-normal);
+  white-space: nowrap;
+  text-decoration: none;
+  border-left: 3px solid transparent;
+}
+
+.jpm-sidebar-nav-link:hover {
+  color: var(--jpm-neutral-100);
+  background-color: rgba(255, 255, 255, 0.05);
+  text-decoration: none;
+}
+
+.jpm-sidebar-nav-link-active {
+  color: var(--jpm-neutral-100);
+  background-color: rgba(255, 255, 255, 0.1);
+  border-left: 3px solid var(--jpm-primary);
+}
+
+.jpm-sidebar-nav-icon {
+  margin-right: var(--jpm-space-3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  flex-shrink: 0;
+}
+
+.jpm-sidebar-nav-text {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.jpm-sidebar-group {
+  cursor: pointer;
+}
+
+.jpm-sidebar-group-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--jpm-space-2) var(--jpm-space-4);
+  color: var(--jpm-neutral-500);
+  font-size: var(--jpm-font-size-sm);
+  font-weight: var(--jpm-font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.jpm-sidebar-group-icon {
+  transition: transform 0.2s ease;
+}
+
+.jpm-sidebar-group-expanded .jpm-sidebar-group-icon {
+  transform: rotate(90deg);
+}
+
+.jpm-sidebar-subnav {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease;
+}
+
+.jpm-sidebar-group-expanded .jpm-sidebar-subnav {
+  max-height: 500px; /* Arbitrary large value */
+}
+
+.jpm-sidebar-subnav-link {
+  padding-left: var(--jpm-space-8) !important;
+  font-size: var(--jpm-font-size-sm);
+}
+
+.jpm-sidebar-footer {
+  padding: var(--jpm-space-3) var(--jpm-space-4);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+}
+
+.jpm-sidebar-footer-text {
+  color: var(--jpm-neutral-500);
+  text-align: center;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Media queries for responsive behavior */
+@media (max-width: 992px) {
+  .jpm-sidebar {
+    transform: translateX(-100%);
+    position: fixed;
+  }
+  
+  .jpm-sidebar.jpm-sidebar-mobile-open {
+    transform: translateX(0);
+  }
+  
+  .jpm-sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: calc(var(--jpm-z-fixed) - 1);
+    display: none;
+  }
+  
+  .jpm-sidebar-overlay.active {
+    display: block;
+  }
+}

@@ -1,0 +1,105 @@
+.jpm-input-container {
+  margin-bottom: var(--jpm-space-4);
+}
+
+.jpm-input-container-full-width {
+  width: 100%;
+}
+
+.jpm-input-label {
+  display: block;
+  margin-bottom: var(--jpm-space-2);
+  font-weight: var(--jpm-font-weight-medium);
+  color: var(--jpm-neutral-800);
+}
+
+.jpm-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.jpm-input {
+  padding: var(--jpm-space-2) var(--jpm-space-3);
+  border: 1px solid var(--jpm-neutral-300);
+  border-radius: var(--jpm-radius-md);
+  background-color: var(--jpm-neutral-100);
+  font-size: var(--jpm-font-size-md);
+  color: var(--jpm-neutral-800);
+  transition: var(--jpm-transition-normal);
+  min-height: 2.5rem;
+}
+
+.jpm-input-full-width {
+  width: 100%;
+}
+
+.jpm-input:focus {
+  outline: none;
+  border-color: var(--jpm-primary);
+  box-shadow: 0 0 0 3px var(--jpm-primary-light);
+}
+
+.jpm-input:disabled {
+  background-color: var(--jpm-neutral-200);
+  color: var(--jpm-neutral-600);
+  cursor: not-allowed;
+}
+
+.jpm-input::placeholder {
+  color: var(--jpm-neutral-500);
+}
+
+.jpm-input-error {
+  border-color: var(--jpm-error);
+}
+
+.jpm-input-error:focus {
+  box-shadow: 0 0 0 3px rgba(216, 59, 1, 0.2);
+}
+
+.jpm-input-helper-text {
+  margin-top: var(--jpm-space-1);
+  font-size: var(--jpm-font-size-sm);
+  color: var(--jpm-neutral-600);
+}
+
+.jpm-input-error-text {
+  margin-top: var(--jpm-space-1);
+  font-size: var(--jpm-font-size-sm);
+  color: var(--jpm-error);
+}
+
+.jpm-input-left-icon,
+.jpm-input-right-icon {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  color: var(--jpm-neutral-600);
+  pointer-events: none;
+}
+
+.jpm-input-left-icon {
+  left: 0;
+}
+
+.jpm-input-right-icon {
+  right: 0;
+}
+
+.jpm-input-with-left-icon {
+  padding-left: 2.5rem;
+}
+
+.jpm-input-with-right-icon {
+  padding-right: 2.5rem;
+}
+
+/* Focus within for the wrapper to style icons when input is focused */
+.jpm-input-wrapper:focus-within .jpm-input-left-icon,
+.jpm-input-wrapper:focus-within .jpm-input-right-icon {
+  color: var(--jpm-primary);
+}

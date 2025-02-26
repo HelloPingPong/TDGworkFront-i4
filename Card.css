@@ -1,0 +1,63 @@
+.jpm-card {
+  background-color: var(--jpm-neutral-100);
+  border-radius: var(--jpm-radius-md);
+  box-shadow: var(--jpm-shadow-md);
+  margin-bottom: var(--jpm-space-4);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.jpm-card-header {
+  padding: var(--jpm-space-4);
+  border-bottom: 1px solid var(--jpm-neutral-300);
+  font-weight: var(--jpm-font-weight-medium);
+  background-color: var(--jpm-neutral-200);
+}
+
+.jpm-card-body {
+  padding: var(--jpm-space-4);
+  flex: 1 1 auto;
+}
+
+.jpm-card-footer {
+  padding: var(--jpm-space-4);
+  border-top: 1px solid var(--jpm-neutral-300);
+  background-color: var(--jpm-neutral-200);
+}
+
+/* Card variations can be added here */
+.jpm-card.jpm-card-bordered {
+  border: 1px solid var(--jpm-neutral-300);
+  box-shadow: none;
+}
+
+.jpm-card.jpm-card-flat {
+  box-shadow: none;
+}
+
+.jpm-card.jpm-card-primary {
+  border-top: 3px solid var(--jpm-primary);
+}
+
+.jpm-card.jpm-card-success {
+  border-top: 3px solid var(--jpm-accent);
+}
+
+.jpm-card.jpm-card-warning {
+  border-top: 3px solid var(--jpm-warning);
+}
+
+.jpm-card.jpm-card-danger {
+  border-top: 3px solid var(--jpm-error);
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+  .jpm-card-header,
+  .jpm-card-body,
+  .jpm-card-footer {
+    padding: var(--jpm-space-3);
+  }
+}

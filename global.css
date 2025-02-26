@@ -1,0 +1,391 @@
+@import 'variables.css';
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: var(--jpm-font-family);
+  font-size: var(--jpm-font-size-md);
+  line-height: var(--jpm-line-height-normal);
+  color: var(--jpm-neutral-800);
+  background-color: var(--jpm-neutral-200);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--jpm-heading-font-family);
+  font-weight: var(--jpm-font-weight-semibold);
+  line-height: var(--jpm-line-height-tight);
+  color: var(--jpm-neutral-900);
+  margin-bottom: var(--jpm-space-4);
+}
+
+h1 {
+  font-size: var(--jpm-font-size-3xl);
+}
+
+h2 {
+  font-size: var(--jpm-font-size-2xl);
+}
+
+h3 {
+  font-size: var(--jpm-font-size-xl);
+}
+
+h4 {
+  font-size: var(--jpm-font-size-lg);
+}
+
+h5 {
+  font-size: var(--jpm-font-size-md);
+}
+
+h6 {
+  font-size: var(--jpm-font-size-sm);
+}
+
+p {
+  margin-bottom: var(--jpm-space-4);
+}
+
+a {
+  color: var(--jpm-primary);
+  text-decoration: none;
+  transition: var(--jpm-transition-normal);
+}
+
+a:hover {
+  color: var(--jpm-primary-dark);
+  text-decoration: underline;
+}
+
+ul, ol {
+  margin-bottom: var(--jpm-space-4);
+  padding-left: var(--jpm-space-5);
+}
+
+li {
+  margin-bottom: var(--jpm-space-2);
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: var(--jpm-space-2) var(--jpm-space-3);
+  border: 1px solid var(--jpm-neutral-300);
+  border-radius: var(--jpm-radius-md);
+  background-color: var(--jpm-neutral-100);
+  transition: var(--jpm-transition-normal);
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--jpm-primary);
+  box-shadow: 0 0 0 3px var(--jpm-primary-light);
+}
+
+input:disabled, select:disabled, textarea:disabled {
+  background-color: var(--jpm-neutral-200);
+  color: var(--jpm-neutral-600);
+  cursor: not-allowed;
+}
+
+button {
+  cursor: pointer;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: var(--jpm-space-5);
+}
+
+th, td {
+  padding: var(--jpm-space-3) var(--jpm-space-4);
+  border-bottom: 1px solid var(--jpm-neutral-300);
+  text-align: left;
+}
+
+th {
+  font-weight: var(--jpm-font-weight-semibold);
+  background-color: var(--jpm-neutral-200);
+}
+
+tr:hover {
+  background-color: var(--jpm-neutral-200);
+}
+
+code, pre {
+  font-family: var(--jpm-mono-font-family);
+  font-size: var(--jpm-font-size-sm);
+  background-color: var(--jpm-neutral-200);
+  border-radius: var(--jpm-radius-md);
+}
+
+code {
+  padding: 0.2em 0.4em;
+}
+
+pre {
+  padding: var(--jpm-space-4);
+  overflow-x: auto;
+  margin-bottom: var(--jpm-space-4);
+}
+
+pre code {
+  padding: 0;
+  background-color: transparent;
+}
+
+/* Utility classes */
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-primary {
+  color: var(--jpm-primary);
+}
+
+.text-success {
+  color: var(--jpm-accent);
+}
+
+.text-warning {
+  color: var(--jpm-warning);
+}
+
+.text-error {
+  color: var(--jpm-error);
+}
+
+.text-muted {
+  color: var(--jpm-neutral-600);
+}
+
+.bg-primary {
+  background-color: var(--jpm-primary);
+}
+
+.bg-light {
+  background-color: var(--jpm-neutral-100);
+}
+
+.bg-dark {
+  background-color: var(--jpm-neutral-800);
+  color: var(--jpm-neutral-100);
+}
+
+.mb-0 {
+  margin-bottom: 0;
+}
+
+.mb-1 {
+  margin-bottom: var(--jpm-space-1);
+}
+
+.mb-2 {
+  margin-bottom: var(--jpm-space-2);
+}
+
+.mb-3 {
+  margin-bottom: var(--jpm-space-3);
+}
+
+.mb-4 {
+  margin-bottom: var(--jpm-space-4);
+}
+
+.mb-5 {
+  margin-bottom: var(--jpm-space-5);
+}
+
+.mt-0 {
+  margin-top: 0;
+}
+
+.mt-1 {
+  margin-top: var(--jpm-space-1);
+}
+
+.mt-2 {
+  margin-top: var(--jpm-space-2);
+}
+
+.mt-3 {
+  margin-top: var(--jpm-space-3);
+}
+
+.mt-4 {
+  margin-top: var(--jpm-space-4);
+}
+
+.mt-5 {
+  margin-top: var(--jpm-space-5);
+}
+
+.m-auto {
+  margin: auto;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--jpm-space-4);
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -var(--jpm-space-2);
+}
+
+.col {
+  flex: 1 0 0%;
+  padding: 0 var(--jpm-space-2);
+}
+
+/* Responsive columns */
+.col-12 {
+  flex: 0 0 auto;
+  width: 100%;
+  padding: 0 var(--jpm-space-2);
+}
+
+.col-6 {
+  flex: 0 0 auto;
+  width: 50%;
+  padding: 0 var(--jpm-space-2);
+}
+
+.col-4 {
+  flex: 0 0 auto;
+  width: 33.333333%;
+  padding: 0 var(--jpm-space-2);
+}
+
+.col-3 {
+  flex: 0 0 auto;
+  width: 25%;
+  padding: 0 var(--jpm-space-2);
+}
+
+@media (max-width: 768px) {
+  .col-md-12 {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+  
+  .col-md-6 {
+    flex: 0 0 auto;
+    width: 50%;
+  }
+}
+
+@media (max-width: 576px) {
+  .col-sm-12 {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+}
+
+/* Card layout */
+.card {
+  background-color: var(--jpm-neutral-100);
+  border-radius: var(--jpm-radius-md);
+  box-shadow: var(--jpm-shadow-md);
+  overflow: hidden;
+  margin-bottom: var(--jpm-space-4);
+}
+
+.card-header {
+  padding: var(--jpm-space-4);
+  border-bottom: 1px solid var(--jpm-neutral-300);
+  background-color: var(--jpm-neutral-200);
+}
+
+.card-body {
+  padding: var(--jpm-space-4);
+}
+
+.card-footer {
+  padding: var(--jpm-space-4);
+  border-top: 1px solid var(--jpm-neutral-300);
+  background-color: var(--jpm-neutral-200);
+}
+
+/* Form layout */
+.form-group {
+  margin-bottom: var(--jpm-space-4);
+}
+
+.form-label {
+  display: block;
+  margin-bottom: var(--jpm-space-2);
+  font-weight: var(--jpm-font-weight-medium);
+}
+
+.form-text {
+  display: block;
+  margin-top: var(--jpm-space-1);
+  font-size: var(--jpm-font-size-sm);
+  color: var(--jpm-neutral-600);
+}
+
+.form-error {
+  display: block;
+  margin-top: var(--jpm-space-1);
+  font-size: var(--jpm-font-size-sm);
+  color: var(--jpm-error);
+}
+
+/* Accessiblity */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

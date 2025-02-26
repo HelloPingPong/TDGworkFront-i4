@@ -1,0 +1,115 @@
+.jpm-app-container {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  background-color: var(--jpm-neutral-200);
+}
+
+.jpm-main-content {
+  flex: 1;
+  margin-left: 240px;
+  display: flex;
+  flex-direction: column;
+  transition: margin-left 0.3s ease;
+  width: calc(100% - 240px);
+}
+
+.jpm-main-content-expanded {
+  margin-left: 64px;
+  width: calc(100% - 64px);
+}
+
+.jpm-page-content {
+  flex: 1;
+  padding: var(--jpm-space-6) var(--jpm-space-4);
+  margin-top: 64px;
+}
+
+.jpm-page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.jpm-footer {
+  padding: var(--jpm-space-4);
+  border-top: 1px solid var(--jpm-neutral-300);
+  background-color: var(--jpm-neutral-100);
+}
+
+.jpm-footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  font-size: var(--jpm-font-size-sm);
+  color: var(--jpm-neutral-600);
+}
+
+.jpm-footer-content p {
+  margin: 0;
+}
+
+/* Page title styles */
+.jpm-page-title {
+  font-size: var(--jpm-font-size-2xl);
+  font-weight: var(--jpm-font-weight-bold);
+  color: var(--jpm-neutral-900);
+  margin-bottom: var(--jpm-space-4);
+}
+
+.jpm-page-subtitle {
+  font-size: var(--jpm-font-size-lg);
+  color: var(--jpm-neutral-600);
+  margin-bottom: var(--jpm-space-5);
+}
+
+.jpm-section {
+  margin-bottom: var(--jpm-space-6);
+}
+
+.jpm-section-title {
+  font-size: var(--jpm-font-size-lg);
+  font-weight: var(--jpm-font-weight-semibold);
+  color: var(--jpm-neutral-900);
+  margin-bottom: var(--jpm-space-3);
+  border-bottom: 1px solid var(--jpm-neutral-300);
+  padding-bottom: var(--jpm-space-2);
+}
+
+/* Media queries for responsive behavior */
+@media (max-width: 992px) {
+  .jpm-main-content {
+    margin-left: 0;
+    width: 100%;
+  }
+  
+  .jpm-page-content {
+    padding: var(--jpm-space-4);
+  }
+  
+  .jpm-footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .jpm-footer-content p:not(:last-child) {
+    margin-bottom: var(--jpm-space-2);
+  }
+}
+
+@media (max-width: 576px) {
+  .jpm-page-content {
+    padding: var(--jpm-space-3);
+  }
+  
+  .jpm-page-title {
+    font-size: var(--jpm-font-size-xl);
+  }
+  
+  .jpm-page-subtitle {
+    font-size: var(--jpm-font-size-md);
+  }
+}
